@@ -1,0 +1,237 @@
+scrHome As screen:
+    Fill: =RGBA(214, 221, 224, 0.4)
+
+    galMessages As gallery.variableTemplateHeightGallery:
+        DelayItemLoading: =true
+        Height: =1129
+        Items: =MessageCollection
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        ShowNavigation: =true
+        ShowScrollbar: =false
+        TemplatePadding: =0
+        TemplateSize: =htmMessage.Height + recSeperatorBottom.Height
+        Width: =Parent.Width - 2 * Self.X
+        X: =20
+        Y: =87
+        ZIndex: =1
+
+        recSeperatorBottom As rectangle:
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =8
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - Self.Height
+            ZIndex: =4
+
+        imgProfile As image:
+            Image: =ThisItem.image
+            ImagePosition: =ImagePosition.Stretch
+            OnSelect: =Select(Parent)
+            RadiusBottomLeft: =50
+            RadiusBottomRight: =50
+            RadiusTopLeft: =50
+            RadiusTopRight: =50
+            Tooltip: =ThisItem.sender
+            X: =If(ThisItem.sender = User().FullName,Parent.TemplateWidth-Self.Width,0)
+            Y: =7
+            ZIndex: =5
+
+        shpSpeechBubble As group:
+            Height: =5
+            Width: =5
+            X: =-14
+            Y: =40
+            ZIndex: =5
+
+            recMiddle As rectangle:
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =Max(htmMessageAuto.Height,99)
+                Tooltip: =ThisItem.sender
+                Width: =(cirRight.X + cirRight.Width/2)-(cirLeft.X + cirLeft.Width/2)
+                X: =cirLeft.X + cirLeft.Width/2
+                Y: =recSeperatorTop.Height
+                ZIndex: =1
+
+            cirLeft As circle:
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =Max(htmMessageAuto.Height,99)
+                Tooltip: =ThisItem.sender
+                Width: =102
+                X: =40
+                Y: =recSeperatorTop.Height
+                ZIndex: =2
+
+            cirRight As circle:
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =Max(htmMessageAuto.Height,99)
+                Tooltip: =ThisItem.sender
+                Width: =102
+                X: =Parent.Width - Self.Width - cirLeft.X
+                Y: =recSeperatorTop.Height
+                ZIndex: =3
+
+        lblSender As label:
+            Align: =Align.Center
+            Color: =RGBA(122, 138, 143, 1)
+            Fill: =RGBA(255, 255, 255, 0.7)
+            FontWeight: =FontWeight.Semibold
+            Height: =34
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: =ThisItem.sender
+            Tooltip: =ThisItem.sender
+            VerticalAlign: =VerticalAlign.Top
+            Width: =100
+            X: =If(ThisItem.sender = User().FullName,Parent.TemplateWidth-Self.Width,0)
+            Y: =73
+            ZIndex: =6
+
+        htmMessageAuto As htmlViewer:
+            AutoHeight: =true
+            Color: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =45
+            HtmlText: |-
+                ="<div style='height:" & Self.Height - Self.PaddingTop - Self.PaddingBottom - 5 & "px;display:table-cell;vertical-align:middle;'>" & ThisItem.message & "</div>"
+            OnSelect: =Select(Parent)
+            PaddingBottom: =20
+            PaddingLeft: =15
+            PaddingRight: =15
+            PaddingTop: =20
+            Size: =18
+            Tooltip: =ThisItem.sender
+            Width: =(cirRight.X + cirRight.Width/2)-(cirLeft.X + cirLeft.Width/2)
+            X: =recMiddle.X
+            Y: =recSeperatorTop.Height
+            ZIndex: =7
+
+        htmMessage As htmlViewer:
+            Color: =RGBA(122, 138, 143, 1)
+            Height: =Max(htmMessageAuto.Height,99)
+            HtmlText: |-
+                ="<div style='height:" & Self.Height - Self.PaddingTop - Self.PaddingBottom - 5 & "px;display:table-cell;vertical-align:middle;'>" & ThisItem.message & "</div>"
+            OnSelect: =Select(Parent)
+            PaddingBottom: =20
+            PaddingLeft: =15
+            PaddingRight: =15
+            PaddingTop: =20
+            Size: =18
+            Tooltip: =ThisItem.sender
+            Width: =(cirRight.X + cirRight.Width/2)-(cirLeft.X + cirLeft.Width/2)
+            X: =recMiddle.X
+            Y: =recSeperatorTop.Height
+            ZIndex: =8
+
+        recSeperatorTop As rectangle:
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =8
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            ZIndex: =9
+
+        lblTime As label:
+            Align: =Align.Center
+            Color: =RGBA(122, 138, 143, 1)
+            Height: =19
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: =TimeValue(ThisItem.time)
+            Tooltip: =ThisItem.sender
+            VerticalAlign: =VerticalAlign.Top
+            Width: =83
+            X: =recMiddle.X + recMiddle.Width - Self.Width
+            Y: =recSeperatorTop.Height + Max(htmMessageAuto.Height,99) - Self.Height
+            ZIndex: =10
+
+    "NotificationComponent As 'Notification Component'":
+        DisplayMode: =DisplayMode.Edit
+        Height: =22
+        messageData: =varMessageData
+        OnChange: |-
+            =Collect(MessageCollection,{message: NotificationComponent.messageReceivedText, time: NotificationComponent.messageReceivedTime, sender: NotificationComponent.messageReceivedSender, image: NotificationComponent.messageReceivedImage})
+        signalRHubConnectionUrl: =varSignalRUrl
+        Visible: =true
+        Width: =201
+        X: =567
+        Y: =1341
+        ZIndex: =1
+
+    inpMessage As text:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Color: =RGBA(122, 138, 143, 1)
+        Default: =""
+        DisabledBorderColor: =RGBA(214, 221, 224, 1)
+        Height: =88
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(122, 138, 143, 1)
+        HoverFill: =RGBA(255, 255, 255, 1)
+        OnChange: =Select(icoSend)
+        PaddingLeft: =20
+        PressedColor: =RGBA(122, 138, 143, 1)
+        PressedFill: =RGBA(255, 255, 255, 1)
+        RadiusBottomLeft: =15
+        RadiusBottomRight: =15
+        RadiusTopLeft: =15
+        RadiusTopRight: =15
+        Size: =20
+        Width: =614
+        X: =38
+        Y: =1239
+        ZIndex: =15
+
+    "icoSend As icon.'3DPrinting'":
+        Color: =RGBA(122, 138, 143, 1)
+        DisabledColor: =RGBA(214, 221, 224, 1)
+        DisplayMode: =If(IsBlank(inpMessage.Text), DisplayMode.Disabled, DisplayMode.Edit)
+        Height: =88
+        Icon: =Icon.Send
+        OnSelect: |-
+            =Set(
+                varMessageData,
+                JSON(
+                    {
+                        sender: User().FullName,
+                        text: inpMessage.Text,
+                        time: Now(),
+                        image: User().Image
+                    },
+                    JSONFormat.IncludeBinaryData
+                )
+            );
+            Reset(inpMessage)
+        Width: =115
+        X: =653
+        Y: =1239
+        ZIndex: =16
+
+    lblAppName As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(122, 138, 143, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =72
+        Size: =20
+        Text: ="SignalR Messenger"
+        Width: =768
+        ZIndex: =17
+
+    "icoMenu As icon.'3DPrinting'":
+        Color: =RGBA(255, 255, 255, 1)
+        Icon: =Icon.Hamburger
+        PaddingBottom: =5
+        PaddingLeft: =5
+        PaddingRight: =5
+        PaddingTop: =5
+        X: =28
+        Y: =4
+        ZIndex: =18
+

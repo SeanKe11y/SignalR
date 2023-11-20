@@ -1,0 +1,16 @@
+{
+  "components": [
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "dev_my.NotificationNamespace.NotificationComponent",
+      "IdentifierType": 0
+    }
+  ],
+  "dataSources": {},
+  "instanceUrl": "https://orgc04867a3.crm4.dynamics.com/",
+  "state": "Configured",
+  "webApiVersion": "v9.0"
+}

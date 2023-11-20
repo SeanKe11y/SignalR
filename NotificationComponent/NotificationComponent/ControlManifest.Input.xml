@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest>
+  <control namespace="my.NotificationNamespace" constructor="NotificationComponent" version="0.0.14" display-name-key="Notification Component" description-key="NotificationComponent description" control-type="standard">
+    <property name="signalRHubConnectionUrl" display-name-key="SignalR Hub Connection Url" description-key="signalRHubConnectionUrl_Desc_Key" of-type="SingleLine.Text" usage="input" required="true" />
+    <property name="messageData" display-name-key="Message Data" description-key="messageData_Desc_Key" of-type="SingleLine.Text" usage="input" required="true" />
+    <property name="messageReceivedTime" display-name-key="messageReceivedTime" description-key="messageReceivedTime_Desc_Key" of-type="SingleLine.Text" usage="output" required="true" />
+    <property name="messageReceivedText" display-name-key="messageReceivedText" description-key="messageReceivedText_Desc_Key" of-type="SingleLine.Text" usage="output" required="true" />
+    <property name="messageReceivedSender" display-name-key="messageReceivedSender" description-key="messageReceivedSender_Desc_Key" of-type="SingleLine.Text" usage="output" required="true" />
+    <property name="messageReceivedImage" display-name-key="messageReceivedImage" description-key="messageReceivedImage_Desc_Key" of-type="SingleLine.Text" usage="output" required="true" />
+    <resources>
+      <code path="index.ts" order="1"/>
+    </resources>
+  </control>
+</manifest>

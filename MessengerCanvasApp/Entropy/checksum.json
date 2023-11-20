@@ -1,0 +1,36 @@
+{
+  "ClientBuildDetails": {
+    "CommitHash": "941f06c8f5cf7a493289e9514c8dec5c50b61d34",
+    "IsLocalBuild": false
+  },
+  "ClientPerFileChecksums": {
+    "AppCheckerResult.sarif": "C8_rc9t4S5jzb8009AXqmUy7dEyusCNllWW195y6ORtXRw=",
+    "Controls\\1.json": "C8_uXcDhh8FA1CRtjmf0SQyqruI5ee+aqZtmQ7CvHSQBXQ=",
+    "Controls\\4.json": "C8_XxLq2DphLLBBVHVKOfJZ2fONrHN7Jjz7SZ1DMm74z9Y=",
+    "Header.json": "C8_B8n1CdlxWPCP4kKaRv0uWNLx9hTR6HBd2VIQ1BdSF0Q=",
+    "Properties.json": "C8_G9uceNRLGawvinvgkbLZqbRIgPPzwFGsTTbYOCpNo2A=",
+    "References\\DataSources.json": "C8_QiC5nIXELMvuZ4O9u/cBJNvb5LvLwUJ5Nf0jbsfSk+c=",
+    "References\\ModernThemes.json": "C8_1oNHVmPqG4dIfcIhXdJC/Kh5k06Mjwc3YxKnVvcYR/0=",
+    "References\\Resources.json": "C8_s+se9qfOYnCKwfIt6gbv1FGBHW47JCt5d/CkUpqbcjk=",
+    "References\\Templates.json": "C8_S8CE+vu2eP7E3AYW6M9vC16gXHpaFZ8ErYw3YcelMGo=",
+    "References\\Themes.json": "C8_zuMgLpz3IJQlVgGqo3GtyhriL3PR35GxXf+rtPR4Gfc=",
+    "Resources\\Controls\\my.NotificationNamespace.NotificationComponent.bundle.js": "C8_adLWcYQi5uaYQNelcPmEUixvXWXmrVWU39oXHiiJizs=",
+    "Resources\\PublishInfo.json": "C8_dVPNGvIYVxCH+twTLpS8y5GNnzrECqzlFB4Z5VBYzjc="
+  },
+  "ClientStampedChecksum": "C8_hHpKeQtgVyPJyIQR4+wjam/i93/wEE8X4r7ZRsfYTr8=",
+  "ServerPerFileChecksums": {
+    "AppCheckerResult.sarif": "C8_rc9t4S5jzb8009AXqmUy7dEyusCNllWW195y6ORtXRw=",
+    "Controls\\1.json": "C8_uXcDhh8FA1CRtjmf0SQyqruI5ee+aqZtmQ7CvHSQBXQ=",
+    "Controls\\4.json": "C8_XxLq2DphLLBBVHVKOfJZ2fONrHN7Jjz7SZ1DMm74z9Y=",
+    "Header.json": "C8_B8n1CdlxWPCP4kKaRv0uWNLx9hTR6HBd2VIQ1BdSF0Q=",
+    "Properties.json": "C8_G9uceNRLGawvinvgkbLZqbRIgPPzwFGsTTbYOCpNo2A=",
+    "References\\DataSources.json": "C8_QiC5nIXELMvuZ4O9u/cBJNvb5LvLwUJ5Nf0jbsfSk+c=",
+    "References\\ModernThemes.json": "C8_1oNHVmPqG4dIfcIhXdJC/Kh5k06Mjwc3YxKnVvcYR/0=",
+    "References\\Resources.json": "C8_s+se9qfOYnCKwfIt6gbv1FGBHW47JCt5d/CkUpqbcjk=",
+    "References\\Templates.json": "C8_S8CE+vu2eP7E3AYW6M9vC16gXHpaFZ8ErYw3YcelMGo=",
+    "References\\Themes.json": "C8_zuMgLpz3IJQlVgGqo3GtyhriL3PR35GxXf+rtPR4Gfc=",
+    "Resources\\Controls\\my.NotificationNamespace.NotificationComponent.bundle.js": "C8_adLWcYQi5uaYQNelcPmEUixvXWXmrVWU39oXHiiJizs=",
+    "Resources\\PublishInfo.json": "C8_dVPNGvIYVxCH+twTLpS8y5GNnzrECqzlFB4Z5VBYzjc="
+  },
+  "ServerStampedChecksum": "C8_hHpKeQtgVyPJyIQR4+wjam/i93/wEE8X4r7ZRsfYTr8="
+}
